@@ -18,6 +18,7 @@ pipeline{
 			}
 		}
 		stage('---run---'){
+			steps{
 				sh "java -jar ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 			}
 		}

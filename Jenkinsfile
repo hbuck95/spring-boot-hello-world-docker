@@ -26,10 +26,14 @@ pipeline{
 				sh "scp /var/lib/jenkins/workspace/HelloWorld-Pipe/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@13.79.18.169:~/deployments/"
 			}
 		}
-		stage('---run---'){
+		stage('---SSH---'){
 			steps{
 				sh "ssh jenkins@13.79.18.169"
-				sh "java -jar /home/jenkins/deployments/hello-world-0.0.1-SNAPSHOT.jar"
+			}
+		}
+		stage('---run---'){
+			steps{
+				sh "java -jar ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 			}
 		}
         }

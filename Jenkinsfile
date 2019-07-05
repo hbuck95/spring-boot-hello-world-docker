@@ -11,9 +11,13 @@ pipeline{
 				sh "mvn package"
 			}
 		}
-		stage('---deploy---'){
+		stage('---SSH to Live---'){
 			steps{
 				sh "ssh jenkins@13.79.18.169"
+			}
+		}
+		stage('---deploy---'){
+			steps{
 				sh "scp jenkins@13.79.18.163:~/var/lib/jenkins/workspace/spring-boot-hello-world-docker/target/hello-world-0.0.1-SNAPSHOT.jar ~/deployments"
 			}
 		}

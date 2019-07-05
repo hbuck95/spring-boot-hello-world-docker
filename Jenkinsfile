@@ -23,7 +23,7 @@ pipeline{
 		}
 		stage('--test copy---'){
 			steps{
-				sh "scp jenkins@13.79.18.163:~/myfile ~/.
+				sh "scp jenkins@13.79.18.163:~/myfile ~/."
 			}
 		}
 		stage('---deploy---'){

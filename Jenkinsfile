@@ -18,13 +18,12 @@ pipeline{
 		}
 		stage('---deploy---'){
 			steps{
-				sh "cd ~/deployments/"
-				sh "scp jenkins@13.79.18.163:/var/lib/jenkins/workspace/HelloWorld-Pipe/target/hello-world-0.0.1-SNAPSHOT.jar ."
+				sh "scp jenkins@13.79.18.163:/var/lib/jenkins/workspace/HelloWorld-Pipe/target/hello-world-0.0.1-SNAPSHOT.jar /home/jenkins/deployments/"
 			}
 		}
 		stage('---run---'){
 			steps{
-				sh "java -jar ./hello-world-0.0.1-SNAPSHOT.jar"
+				sh "java -jar /home/jenkins/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 			}
 		}
         }

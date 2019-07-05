@@ -13,7 +13,7 @@ pipeline{
 		}
 		stage('---deploy---'){
 			steps{
-				sh "scp -r /var/lib/jenkins/workspace/spring-boot-hello-world-docker/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@13.79.18.169:~/deployments/
+				sh "scp -r /var/lib/jenkins/workspace/spring-boot-hello-world-docker/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@13.79.18.169:~/deployments
 			}
 		}
 		stage('---run---'){

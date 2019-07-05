@@ -19,7 +19,7 @@ pipeline{
 		stage('---SSH---'){
 			steps{
 				sh "ssh jenkins@13.79.18.169"
-				sh "ls -lrt ~/deployments"
+				sh "ssh jenkins@13.79.18.169 'ls -lrt ~/deployments'"
 			}
 		}
 		stage('---run---'){

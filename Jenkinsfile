@@ -11,16 +11,6 @@ pipeline{
 				sh "mvn package"
 			}
 		}
-		stage('---pwd---'){
-			steps{
-				sh "pwd"
-			}
-		}
-		stage('--test copy---'){
-			steps{
-				sh "scp ~/myfile2  jenkins@13.79.18.169:~/"
-			}
-		}
 		stage('---deploy---'){
 			steps{
 				sh "scp /var/lib/jenkins/workspace/HelloWorld-Pipe/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@13.79.18.169:~/deployments/"
@@ -33,6 +23,7 @@ pipeline{
 		}
 		stage('---run---'){
 			steps{
+				sh "chmod 777 ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 				sh "java -jar ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 			}
 		}

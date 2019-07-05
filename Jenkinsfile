@@ -23,7 +23,6 @@ pipeline{
 		}
 		stage('---deploy---'){
 			steps{
-				sh "chmod +x /var/lib/jenkins/workspace/HelloWorld-Pipe/target/hello-world-0.0.1-SNAPSHOT.jar"
 				sh "scp /var/lib/jenkins/workspace/HelloWorld-Pipe/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@13.79.18.169:~/deployments/"
 			}
 		}

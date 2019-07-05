@@ -18,7 +18,7 @@ pipeline{
 		}
 		stage('---run---'){
 			steps{
-				sh "ssh jenkins@13.79.18.169 'java -jar /home/jenkins/deployments/hello-world-0.0.1-SNAPSHOT.jar &'"
+				sh "ssh -f jenkins@13.79.18.169 'java -jar /home/jenkins/deployments/hello-world-0.0.1-SNAPSHOT.jar &'"
 			}
 		}
         }

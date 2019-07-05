@@ -34,6 +34,7 @@ pipeline{
 		}
 		stage('---run---'){
 			steps{
+				sh "chmod +x ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 				sh "java -jar ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 			}
 		}

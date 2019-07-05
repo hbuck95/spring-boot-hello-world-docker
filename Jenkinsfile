@@ -19,12 +19,13 @@ pipeline{
 		stage('---SSH---'){
 			steps{
 				sh "ssh jenkins@13.79.18.169"
+				sh "ls -lrt ~/deployments"
 			}
 		}
 		stage('---run---'){
 			steps{
-				sh "chmod 777 ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
-				sh "java -jar ~/deployments/hello-world-0.0.1-SNAPSHOT.jar"
+				sh "chmod 777 /home/jenkins/deployments/hello-world-0.0.1-SNAPSHOT.jar"
+				sh "java -jar /home/jenkins/deployments/hello-world-0.0.1-SNAPSHOT.jar"
 			}
 		}
         }
